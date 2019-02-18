@@ -1,4 +1,4 @@
-.idea
+.idea/
 
 
 # Created by .ignore support plugin (hsz.mobi)
@@ -13,7 +13,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+build/w
 develop-eggs/
 dist/
 downloads/

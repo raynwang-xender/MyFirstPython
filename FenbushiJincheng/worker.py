@@ -25,6 +25,5 @@ for i in range(10):
         result.put(r)
     except queue.Empty:
         print('任务队列为空.')
-
-    # 处理结束:
+# 处理结束:
 print('worker退出.')

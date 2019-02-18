@@ -2,17 +2,13 @@
 
 import random, time, queue
 from multiprocessing.managers import BaseManager
-
 # 发送任务的队列:
 task_queue = queue.Queue()
 # 接收结果的队列:
 result_queue = queue.Queue()
-
-
 # 从BaseManager继承的QueueManager:
 class QueueManager(BaseManager):
     pass
-
 # 把两个Queue都注册到网络上, callable参数关联了Queue对象:
 QueueManager.register('get_task_queue', callable=lambda: task_queue)
 QueueManager.register('get_result_queue', callable=lambda: result_queue)
@@ -28,7 +24,6 @@ for i in range(10):
     r = random.randint(8, 10000)
     print('任务放入队列：r=%s' % r)
     task.put(r)
-
 print('从result队列获取结果....')
 for i in range(10):
     # 通过队列上面的get方法获取，同时设置超时时间为10秒
